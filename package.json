@@ -1,0 +1,29 @@
+{
+  "name": "node-craftsman",
+  "version": "1.0.0",
+  "description": "Exercises from The Node Craftsman Book",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmvianna/nodeCraftsman.git"
+  },
+  "keywords": [
+    "node",
+    "exercise",
+    "javascript",
+    "es6"
+  ],
+  "author": "Daniel Vianna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmvianna/nodeCraftsman/issues"
+  },
+  "homepage": "https://github.com/dmvianna/nodeCraftsman#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
