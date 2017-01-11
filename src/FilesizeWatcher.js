@@ -2,7 +2,7 @@
 
 const fs = require('fs')
 
-const FilesizeWatcher = (path) => {
+const FilesizeWatcher = function (path) {
   const self = this
 
   self.callbacks = {}
@@ -28,10 +28,12 @@ const FilesizeWatcher = (path) => {
   })
 }
 
-FilesizeWatcher.prototype.on = (eventType, callback) => {
+FilesizeWatcher.prototype.on = function (eventType, callback) {
   this.callbacks[eventType] = callback
 }
 
-FilesizeWatcher.prototype.stop = () => {
+FilesizeWatcher.prototype.stop = function () {
   clearInterval(this.interval)
 }
+
+module.exports = FilesizeWatcher

@@ -5,8 +5,7 @@ const FilesizeWatcher = require('../src/FilesizeWatcher')
 const exec = require('child_process').exec
 
 describe('FilesizeWatcher', () => {
-
-  let watcher
+  var watcher
   afterEach(() => watcher.stop())
 
   it('should fire a "grew" event when the file grew in size', (done) => {
