@@ -3,28 +3,26 @@
 const fs = require('fs')
 
 const FilesizeWatcher = function (path) {
-  const self = this
-
-  self.callbacks = {}
+  this.callbacks = {}
 
   if (/^\//.test(path) === false) {
     process.nextTick(() => {
-      self.callbacks['error']('Path does not start with a slash')
+      this.callbacks['error']('Path does not start with a slash')
     })
     return
   }
 
-  fs.stat(path, (err, stats) => { self.lastfilesize = stats.size })
+  fs.stat(path, (err, stats) => { this.lastfilesize = stats.size })
 
-  self.interval = setInterval(() => {
+  this.interval = setInterval(() => {
     fs.stat(path, (err, stats) => {
-      if (stats.size > self.lastfilesize) {
-        self.callbacks['grew'](stats.size - self.lastfilesize)
-        self.lastfilesize = stats.size
+      if (stats.size > this.lastfilesize) {
+        this.callbacks['grew'](stats.size - this.lastfilesize)
+        this.lastfilesize = stats.size
       }
-      if (stats.size < self.lastfilesize) {
-        self.callbacks['shrank'](self.lastfilesize - stats.size)
-        self.lastfilesize = stats.size
+      if (stats.size < this.lastfilesize) {
+        this.callbacks['shrank'](this.lastfilesize - stats.size)
+        this.lastfilesize = stats.size
       }
     }, 1000)
   })
