@@ -8,7 +8,9 @@ const FilesizeWatcher = function (path) {
   self.callbacks = {}
 
   if (/^\//.test(path) === false) {
-    self.callbacks['error']('Path does not start with a slash')
+    process.nextTick(() => {
+      self.callbacks['error']('Path does not start with a slash')
+    })
     return
   }
 
