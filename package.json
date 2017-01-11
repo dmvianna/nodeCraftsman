@@ -22,7 +22,9 @@
     "url": "https://github.com/dmvianna/nodeCraftsman/issues"
   },
   "homepage": "https://github.com/dmvianna/nodeCraftsman#readme",
-  "dependencies": {},
+  "dependencies": {
+    "request": "^2.79.0"
+  },
   "devDependencies": {
     "jasmine-node": "^1.14.5"
   }
